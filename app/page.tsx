@@ -27,8 +27,8 @@ export default function Home() {
           blog and more.
         </Paragraph>
 
-        <Heading as="h2" className={cxm("my-5 font-semibold")}>
-          Features
+        <Heading as="h2" className={cxm("my-5 font-semibold", "border-b-2 border-comet", "w-max")}>
+          Latest Featured Work
         </Heading>
         {[1, 2, 3].map((e) => (
           <div
