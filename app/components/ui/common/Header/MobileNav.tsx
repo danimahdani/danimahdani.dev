@@ -3,7 +3,7 @@ import APP_ROUTE from "libs/constant/routes";
 import { cxm } from "libs/helpers";
 import { Fragment } from "react";
 import { HiMenuAlt4 } from "react-icons/hi";
-import type { IconType } from "react-icons/lib";
+import { IconType } from "react-icons/lib";
 import { RiHome6Line, RiPenNibLine, RiBriefcase5Line } from "react-icons/ri";
 import { UnstyledLink } from "~ui/links/UnstyledLink";
 
@@ -55,7 +55,7 @@ export const MobileNav: React.FunctionComponent = () => {
             {route.map((route) => {
               return (
                 <Menu.Item key={route.path} as={Fragment}>
-                  {({ active }) => (
+                  {({ active }: any) => (
                     <UnstyledLink
                       className={cxm(
                         "flex h-10 items-center space-x-2.5 rounded px-2.5 ",

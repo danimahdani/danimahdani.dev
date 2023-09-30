@@ -1,3 +1,4 @@
+"use state";
 import { useEffect, useState } from "react";
 
 /**
