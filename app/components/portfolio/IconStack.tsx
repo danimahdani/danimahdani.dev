@@ -18,7 +18,7 @@ import {
   SiVite,
 } from "react-icons/si";
 
-type IconStackProps = {
+export type IconStackProps = {
   type: string;
   className?: string;
 };

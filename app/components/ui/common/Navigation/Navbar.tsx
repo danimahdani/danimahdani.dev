@@ -16,7 +16,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
     <header
       className={cxm(
         "fixed bottom-0 left-0 right-0 z-10 md:sticky",
-        "md:px-4 md:pb-4 md:pt-20",
+        "md:px-10 md:pb-4 md:pt-20",
         "bg-stellar"
       )}
     >

@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { cxm } from "libs/helpers";
 import type { ImageProps } from "next/image";
 import NextImage from "next/image";
@@ -7,10 +8,7 @@ type WrappedImageProps = ImageProps & {
   parentStyle?: string;
 };
 
-export const WrappedImage: React.FunctionComponent<WrappedImageProps> = ({
-  parentStyle,
-  ...props
-}) => {
+export const WrappedImage: FC<WrappedImageProps> = ({ parentStyle, ...props }) => {
   if (!props.fill) {
     return <NextImage {...props} />;
   }

@@ -4,7 +4,7 @@ import { poppins } from "./libs/utils/fonts";
 import { cxm } from "./libs/helpers";
 import { ChildrenProps } from "danimahdani";
 import NextTopLoader from "nextjs-toploader";
-import Navbar from "~ui/common/Header/Navbar";
+import Navbar from "~ui/common/Navigation/Navbar";
 
 export const metadata: Metadata = {
   title: "Muhammad Mahdani Rahmatullah",
@@ -18,7 +18,7 @@ export default function RootLayout({ children }: ChildrenProps) {
         <NextTopLoader color="#F4C2AB" showSpinner={false} />
         <div className={cxm("min-h-screen w-full", "bg-stellar text-shiro")}>
           <Navbar />
-          <div className="px-4">{children}</div>
+          <div className="px-4 md:px-10">{children}</div>
         </div>
       </body>
     </html>
