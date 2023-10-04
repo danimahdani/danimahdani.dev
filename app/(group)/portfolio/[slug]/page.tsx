@@ -14,6 +14,7 @@ import MdxResource from "~ui/typography/MdxResource";
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { getContents, getContentBySlug } from "libs/content";
 import { HeadingPortfolio } from "../HeadingPortfolio";
+import Footer from "~ui/common/Footer";
 
 interface PageProps {
   params: {
@@ -105,6 +106,7 @@ const Page: FC<PageProps> = async (context) => {
         />
 
         <MdxResource mdxSource={mdxSource} mdxComponents={MDXComponents} />
+        <Footer />
       </section>
     </Main>
   );

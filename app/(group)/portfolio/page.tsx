@@ -14,6 +14,7 @@ const getContentsData = async () => {
   const response = await getContents<Portfolio>("/portfolio");
 
   const portfolio = response.map((d) => d.header).sort(getNewestPortfolio);
+
   return portfolio;
 };
 

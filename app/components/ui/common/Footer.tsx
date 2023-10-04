@@ -22,9 +22,7 @@ const Footer: FC<FooterProps> = ({}) => {
         "mb-12 lg:md:pb-7"
       )}
     >
-      <Heading as="h5" className={cxm("text-sm font-medium")}>
-        Crafted by Mahdani
-      </Heading>
+      <h5 className={cxm("text-sm font-medium")}>Crafted by Mahdani</h5>
       <div className="flex gap-x-5">
         {socialMediaIcons.map((item, index) => {
           const { icon: IconComponent } = item;

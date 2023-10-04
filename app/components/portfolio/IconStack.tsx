@@ -16,6 +16,7 @@ import {
   SiTailwindcss,
   SiTypescript,
   SiVite,
+  SiPrisma,
 } from "react-icons/si";
 
 export type IconStackProps = {
@@ -33,7 +34,7 @@ export const IconStack: React.FunctionComponent<IconStackProps> = ({ type, class
 
     case "next.js":
     case "nextjs":
-      return <SiNextdotjs className={cxm("text-theme-800 dark:text-theme-200", className)} />;
+      return <SiNextdotjs className={cxm("text-theme-800", className)} />;
     case "nodejs":
     case "node.js":
       return <SiNodedotjs className={cxm("text-emerald-500", className)} />;
@@ -53,14 +54,14 @@ export const IconStack: React.FunctionComponent<IconStackProps> = ({ type, class
 
     case "sass":
     case "scss":
-      return <SiSass className={cxm("text-pink-500 dark:text-pink-400", className)} />;
+      return <SiSass className={cxm("0 text-pink-500", className)} />;
 
     case "css":
     case "CSS":
-      return <SiCss3 className={cxm("text-blue-600 dark:text-blue-500", className)} />;
+      return <SiCss3 className={cxm("text-blue-600 ", className)} />;
 
     case "framer motion":
-      return <SiFramer className={cxm("text-theme-800 dark:text-theme-200", className)} />;
+      return <SiFramer className={cxm("text-theme-800 ", className)} />;
 
     case "javascript":
       return <SiJavascript className={cxm("text-yellow-500", className)} />;
@@ -69,15 +70,15 @@ export const IconStack: React.FunctionComponent<IconStackProps> = ({ type, class
       return <SiTypescript className={cxm("text-blue-600", className)} />;
 
     case "markdown":
-      return <SiMarkdown className={cxm("text-theme-800 dark:text-theme-200", className)} />;
+      return <SiMarkdown className={cxm("text-theme-800 0", className)} />;
 
     case "supabase":
-      return <SiSupabase className={cxm("text-emerald-600 dark:text-emerald-500", className)} />;
+      return <SiSupabase className={cxm("text-emerald-600 ", className)} />;
 
-    case "go":
-      return <SiGo className={cxm("text-emerald-600 dark:text-emerald-500", className)} />;
+    case "prisma":
+      return <SiPrisma className={cxm("text-shiro ", className)} />;
 
     default:
-      return <SiCodesandbox className={cxm("text-slate-900 dark:text-slate-800", className)} />;
+      return <SiCodesandbox className={cxm(" text-slate-900", className)} />;
   }
 };

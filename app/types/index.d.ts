@@ -8,7 +8,6 @@ declare module "danimahdani" {
     title: string;
     slug: string;
     summary: string;
-    featured: boolean;
     author_name: string;
     github_username: string;
     published: string;

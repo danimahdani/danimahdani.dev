@@ -7,10 +7,10 @@ const APP_ROUTE = [
     path: "/portfolio",
     name: "portfolio",
   },
-  {
-    path: "/blog",
-    name: "blog",
-  },
+  // {
+  //   path: "/blog",
+  //   name: "blog",
+  // },
 ];
 
 export default APP_ROUTE;

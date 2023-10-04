@@ -1,6 +1,7 @@
 import { ChildrenProps } from "danimahdani";
 import { cxm } from "libs/helpers";
 import { FC } from "react";
+import Footer from "./Footer";
 
 interface MainProps extends ChildrenProps {
   className: string;
