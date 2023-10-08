@@ -4,7 +4,6 @@ import {
   SiCss3,
   SiFirebase,
   SiFramer,
-  SiGo,
   SiJavascript,
   SiMarkdown,
   SiNextdotjs,
@@ -17,6 +16,7 @@ import {
   SiTypescript,
   SiVite,
   SiPrisma,
+  SiBulma,
 } from "react-icons/si";
 
 export type IconStackProps = {
@@ -77,6 +77,9 @@ export const IconStack: React.FunctionComponent<IconStackProps> = ({ type, class
 
     case "prisma":
       return <SiPrisma className={cxm("text-shiro ", className)} />;
+
+    case "bulma":
+      return <SiBulma className={cxm("text-emerald-500 ", className)} />;
 
     default:
       return <SiCodesandbox className={cxm(" text-slate-900", className)} />;

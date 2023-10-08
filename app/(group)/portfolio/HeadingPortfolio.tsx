@@ -1,5 +1,5 @@
 import { cxm } from "libs/helpers";
-import { HiGlobeAlt } from "react-icons/hi";
+import { GoArrowUpRight } from "react-icons/go";
 import { SiGithub } from "react-icons/si";
 import { UnderlineLink } from "~ui/links";
 
@@ -33,7 +33,7 @@ export const HeadingPortfolio: React.FunctionComponent<HeadingPortfolioProps> = 
             href={props.link.live}
             className="text-theme-700 dark:text-theme-200 max-w-max gap-2 py-1"
           >
-            <HiGlobeAlt
+            <GoArrowUpRight
               className={cxm("text-lg md:text-xl", "text-theme-800 dark:text-theme-200")}
             />
             <span className={cxm("text-sm md:text-base")}>Live Demo</span>

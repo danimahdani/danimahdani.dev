@@ -42,10 +42,12 @@ const PortfolioItem: FC<PortfolioItemProps> = ({ portfolio, classes }) => {
         </div>
         <Paragraph className={cxm("lg:text-base")}>{portfolio.summary}</Paragraph>
         <div className="mt-2 flex gap-x-8">
-          <div className="flex items-center gap-x-2">
-            <IoRocketOutline />
-            <UnstyledLink href={portfolio.link.live}>Live Demo</UnstyledLink>
-          </div>
+          {portfolio.link.live !== "-" && (
+            <div className="flex items-center gap-x-2">
+              <IoRocketOutline />
+              <UnstyledLink href={portfolio.link.live}>Live Demo</UnstyledLink>
+            </div>
+          )}
           <div className="flex items-center gap-x-2">
             <GoArrowUpRight />
             <UnstyledLink href={portfolio.link.github}>Read</UnstyledLink>
