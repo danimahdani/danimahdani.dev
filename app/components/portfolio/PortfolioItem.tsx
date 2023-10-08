@@ -10,10 +10,11 @@ import { Portfolio } from "danimahdani";
 
 interface PortfolioItemProps {
   portfolio: Portfolio;
+  slug: string;
   classes: string[];
 }
 
-const PortfolioItem: FC<PortfolioItemProps> = ({ portfolio, classes }) => {
+const PortfolioItem: FC<PortfolioItemProps> = ({ portfolio, slug, classes }) => {
   return (
     <div className={cxm("mb-5 flex flex-col gap-5 last:mb-0", ...classes)}>
       <WrappedImage
@@ -28,7 +29,7 @@ const PortfolioItem: FC<PortfolioItemProps> = ({ portfolio, classes }) => {
       />
       <div className="flex-1">
         <UnstyledLink
-          href={`/portfolio/${portfolio.slug}`}
+          href={`/portfolio/${slug}`}
           className={cxm(
             "text-xl font-medium",
             "hover:border-theme-500 border-b-2 border-dashed border-transparent dark:hover:border-comet"

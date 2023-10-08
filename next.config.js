@@ -3,13 +3,6 @@ const nextConfig = {
   images: {
     domains: ["source.unsplash.com", "ik.imagekit.io"],
   },
-  typescript: {
-    // !! WARN !!
-    // Dangerously allow production builds to successfully complete even if
-    // your project has type errors.
-    // !! WARN !!
-    ignoreBuildErrors: true,
-  },
 };
 
 module.exports = nextConfig;

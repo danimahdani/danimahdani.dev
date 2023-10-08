@@ -3,32 +3,10 @@ import Main from "~ui/common/Main";
 import { cxm } from "./libs/helpers";
 import { Heading } from "~ui/typography/Heading";
 import { Paragraph } from "~ui/typography/Paragraph";
-import {
-  AiFillGithub,
-  AiFillLinkedin,
-  AiOutlineDownload,
-  AiOutlineInstagram,
-  AiOutlineMail,
-} from "react-icons/ai";
+import Contacts from "components/contacts";
 import { UnstyledLink } from "~ui/links";
-import { type IconType } from "react-icons";
-import Footer from "~ui/common/Footer";
 
 interface PageProps {}
-
-type Contact = {
-  icon: IconType;
-  name: string;
-  href: string;
-}[];
-
-export const contacts: Contact = [
-  { icon: AiFillGithub, name: "Github", href: "https://github.com/danimahdani" },
-  { icon: AiOutlineMail, name: "Email", href: "mailto: hellodanimahdani@gmail.com?subject=" },
-  { icon: AiFillLinkedin, name: "Linkedin", href: "https://www.linkedin.com/in/danimahdani/" },
-  { icon: AiOutlineDownload, name: "Download", href: "#" },
-  { icon: AiOutlineInstagram, name: "Instagram", href: "https://www.instagram.com/danimahdani_/" },
-];
 
 const LandingPage: FC<PageProps> = async ({}) => {
   return (
@@ -55,17 +33,7 @@ const LandingPage: FC<PageProps> = async ({}) => {
             <Heading as="h2" className="w-max border-b-4 border-comet">
               Contact Me
             </Heading>
-            <div className="mt-4 grid grid-cols-2 gap-x-10 gap-y-4">
-              {contacts.map((item, index) => {
-                const { icon: IconComponent, href } = item;
-                return (
-                  <UnstyledLink key={index} href={href} className="flex items-center gap-x-3">
-                    <IconComponent size={30} />
-                    {item.name}
-                  </UnstyledLink>
-                );
-              })}
-            </div>
+            <Contacts />
           </div>
         </div>
         <Paragraph>

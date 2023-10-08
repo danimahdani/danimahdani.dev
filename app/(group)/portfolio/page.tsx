@@ -7,19 +7,36 @@ import { getContents } from "libs/content";
 import { getNewestPortfolio } from "libs/sorters";
 import { Heading } from "~ui/typography/Heading";
 import Footer from "~ui/common/Footer";
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 
 interface PageProps {}
 
-const getContentsData = async () => {
-  const response = await getContents<Portfolio>("/portfolio");
+// const getContentsData = async () => {
+//   const response = await getContents<Portfolio>("/portfolio");
 
-  const portfolio = response.map((d) => d.header).sort(getNewestPortfolio);
+//   const portfolio = response.map((d) => d.header).sort(getNewestPortfolio);
 
-  return portfolio;
-};
+//   return portfolio;
+// };
+
+const portfoliosPath = "app/data/portfolio";
+
+const files = fs.readdirSync(path.join(portfoliosPath));
+
+const portfolios = files.map((filename) => {
+  const fileContent = fs.readFileSync(path.join(portfoliosPath, filename), "utf-8");
+
+  const { data: frontMatter } = matter(fileContent);
+  return {
+    meta: frontMatter as Portfolio,
+    slug: filename.replace(".mdx", ""),
+  };
+});
 
 const Page: FC<PageProps> = async ({}) => {
-  const portfolios = await getContentsData();
+  // const portfolios = await getContentsData();
 
   return (
     <Main className={cxm()}>
@@ -36,7 +53,8 @@ const Page: FC<PageProps> = async ({}) => {
       {portfolios.map((portfolio, idx) => (
         <PortfolioItem
           key={idx}
-          portfolio={portfolio}
+          portfolio={portfolio.meta}
+          slug={portfolio.slug}
           classes={["md:grid md:grid-cols-2", "lg:grid lg:grid-cols-2"]}
         />
       ))}
