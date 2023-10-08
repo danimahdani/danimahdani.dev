@@ -20,9 +20,9 @@ type Contact = {
   icon: IconType;
   name: string;
   href: string;
-};
+}[];
 
-export const contacts: ReadonlyArray<Contact> = [
+export const contacts: Contact = [
   { icon: AiFillGithub, name: "Github", href: "https://github.com/danimahdani" },
   { icon: AiOutlineMail, name: "Email", href: "mailto: hellodanimahdani@gmail.com?subject=" },
   { icon: AiFillLinkedin, name: "Linkedin", href: "https://www.linkedin.com/in/danimahdani/" },
@@ -30,7 +30,7 @@ export const contacts: ReadonlyArray<Contact> = [
   { icon: AiOutlineInstagram, name: "Instagram", href: "https://www.instagram.com/danimahdani_/" },
 ];
 
-const Page: FC<PageProps> = async ({}) => {
+const LandingPage: FC<PageProps> = async ({}) => {
   return (
     <Main className={cxm("")}>
       <div className=" ">
@@ -80,4 +80,4 @@ const Page: FC<PageProps> = async ({}) => {
   );
 };
 
-export default Page;
+export default LandingPage;
