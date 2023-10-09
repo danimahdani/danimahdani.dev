@@ -17,6 +17,8 @@ import {
   SiVite,
   SiPrisma,
   SiBulma,
+  SiBootstrap,
+  SiVuedotjs,
 } from "react-icons/si";
 
 export type IconStackProps = {
@@ -80,6 +82,12 @@ export const IconStack: React.FunctionComponent<IconStackProps> = ({ type, class
 
     case "bulma":
       return <SiBulma className={cxm("text-emerald-500 ", className)} />;
+
+    case "bootstrap":
+      return <SiBootstrap className={cxm("text-purple-400 ", className)} />;
+
+    case "vue":
+      return <SiVuedotjs className={cxm("text-emerald-500 ", className)} />;
 
     default:
       return <SiCodesandbox className={cxm(" text-slate-900", className)} />;

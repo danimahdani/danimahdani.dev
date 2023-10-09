@@ -65,7 +65,7 @@ interface PortfolioDetail {
 // };
 
 export async function generateStaticParams() {
-  const files = fs.readdirSync(path.join("app/data/portfolio"));
+  const files = fs.readdirSync(path.join("portfolio"));
 
   const paths = files.map((filename) => ({
     slug: filename.replace(".mdx", ""),
@@ -75,7 +75,7 @@ export async function generateStaticParams() {
 }
 
 function getDetailPortfolio({ slug }: { slug: string }) {
-  const markdownFile = fs.readFileSync(path.join("app/data/portfolio", slug + ".mdx"), "utf-8");
+  const markdownFile = fs.readFileSync(path.join("portfolio", slug + ".mdx"), "utf-8");
 
   const { data: fontMatter, content } = matter(markdownFile);
 
