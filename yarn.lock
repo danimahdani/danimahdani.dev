@@ -310,7 +310,7 @@
 
 "@tailwindcss/typography@github:tailwindcss/typography":
   version "0.5.10"
-  resolved "git+ssh://git@github.com/tailwindcss/typography.git#e7c760f225880011b9cc42dcca5367d7469d51a0"
+  resolved "git+ssh://git@github.com/tailwindcss/typography.git#a86e6015694c3435ff6cef84f3dd61b81adf26e1"
   dependencies:
     lodash.castarray "^4.4.0"
     lodash.isplainobject "^4.0.6"
