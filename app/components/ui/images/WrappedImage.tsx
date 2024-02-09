@@ -1,7 +1,6 @@
 import { FC } from "react";
 import { cxm } from "libs/helpers";
-import type { ImageProps } from "next/image";
-import NextImage from "next/image";
+import NextImage, { ImageProps } from "next/image";
 
 type WrappedImageProps = ImageProps & {
   alt: string;

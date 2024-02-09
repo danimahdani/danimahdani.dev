@@ -6,6 +6,7 @@ import APP_ROUTE from "libs/constant/routes";
 import { UnstyledLink } from "../../links/UnstyledLink";
 import { MobileNav } from "./MobileNav";
 import { RiMailLine } from "react-icons/ri";
+import { motion } from "framer-motion";
 
 interface NavbarProps {}
 
@@ -24,13 +25,16 @@ const Navbar: FC<NavbarProps> = ({}) => {
         {APP_ROUTE.map((route) => {
           return (
             <UnstyledLink
-              className={cxm(
-                "border-b-4 font-semibold",
-                pathName === route.path ? "border-comet" : "border-transparent"
-              )}
+              className={cxm("relative border-b-4 border-transparent font-semibold")}
               href={route.path}
               key={route.path}
             >
+              {pathName === route.path && (
+                <motion.span
+                  layoutId="underline"
+                  className="absolute left-0 top-full block h-[4px] w-full bg-comet"
+                />
+              )}
               {route.name}
             </UnstyledLink>
           );

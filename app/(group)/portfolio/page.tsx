@@ -1,54 +1,18 @@
+import React from "react";
 import { cxm } from "libs/helpers";
 import Main from "~ui/common/Main";
 import { FC } from "react";
 import PortfolioItem from "components/portfolio/PortfolioItem";
-import { Portfolio } from "danimahdani";
-import { getContents } from "libs/content";
-import { getNewestPortfolio } from "libs/sorters";
 import { Heading } from "~ui/typography/Heading";
-import Footer from "~ui/common/Footer";
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
+import { portfolios } from "data/mdx_data";
+import { motion } from "framer-motion";
 
 interface PageProps {}
 
-// const getContentsData = async () => {
-//   const response = await getContents<Portfolio>("/portfolio");
-
-//   const portfolio = response.map((d) => d.header).sort(getNewestPortfolio);
-
-//   return portfolio;
-// };
-
-const portfoliosPath = "portfolio";
-
-const files = fs.readdirSync(path.join(portfoliosPath));
-
-const portfolios = files
-  .map((filename) => {
-    const fileContent = fs.readFileSync(path.join(portfoliosPath, filename), "utf-8");
-
-    const { data: frontMatter } = matter(fileContent);
-    return {
-      meta: frontMatter as Portfolio,
-      slug: filename.replace(".mdx", ""),
-    };
-  })
-  .sort((a, b) => {
-    return new Date(a.meta.date) < new Date(b.meta.date)
-      ? 1
-      : new Date(a.meta.date) > new Date(b.meta.date)
-      ? 0
-      : -1;
-  });
-
-const Page: FC<PageProps> = async ({}) => {
-  // const portfolios = await getContentsData();
-
+const Page: FC<PageProps> = ({}) => {
   return (
     <Main className={cxm()}>
-      <div className="">
+      <React.Fragment>
         <Heading as="h1" className="mb-3">
           Portfolio
         </Heading>
@@ -57,7 +21,7 @@ const Page: FC<PageProps> = async ({}) => {
           look and explore. Some of the portfolios even have website demos that you can try out if
           you&apos;d like.{" "}
         </p>
-      </div>
+      </React.Fragment>
       {portfolios.map((portfolio, idx) => (
         <PortfolioItem
           key={idx}
@@ -66,7 +30,6 @@ const Page: FC<PageProps> = async ({}) => {
           classes={["md:grid md:grid-cols-2", "lg:grid lg:grid-cols-2"]}
         />
       ))}
-      <Footer />
     </Main>
   );
 };

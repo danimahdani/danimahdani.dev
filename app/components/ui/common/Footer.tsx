@@ -13,16 +13,18 @@ const socialMediaIcons = [
 
 interface FooterProps {}
 
-const Footer: FC<FooterProps> = ({}) => {
+const Footer: FC<FooterProps> = () => {
   return (
     <footer
       className={cxm(
-        " mt-5 border-t-2 border-shiro",
+        "mx-auto mt-5 max-w-3xl border-t-2 border-shiro text-shiro",
         "flex justify-between pt-2",
         "mb-12 lg:md:pb-7"
       )}
     >
-      <h5 className={cxm("text-sm font-medium")}>Crafted by Mahdani</h5>
+      <Heading as="h5" className={cxm("text-sm font-medium")}>
+        Crafted by Mahdani
+      </Heading>
       <div className="flex gap-x-5">
         {socialMediaIcons.map((item, index) => {
           const { icon: IconComponent } = item;

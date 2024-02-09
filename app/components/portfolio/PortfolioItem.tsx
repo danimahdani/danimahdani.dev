@@ -16,7 +16,7 @@ interface PortfolioItemProps {
 
 const PortfolioItem: FC<PortfolioItemProps> = ({ portfolio, slug, classes }) => {
   return (
-    <div className={cxm("mb-5 flex flex-col gap-5 last:mb-0", ...classes)}>
+    <div className={cxm("mb-5 flex flex-col gap-x-5 last:mb-0", ...classes)}>
       <WrappedImage
         src={portfolio.image}
         alt="Portfolio 1"
