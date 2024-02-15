@@ -40,7 +40,14 @@ const Navbar: FC<NavbarProps> = ({}) => {
           );
         })}
       </nav>
-      <nav className={cxm("flex md:hidden", "items-center justify-between", "px-5 py-3")}>
+      <nav
+        className={cxm(
+          "flex md:hidden",
+          "items-center justify-between",
+          "px-5 py-3",
+          "shadow-md shadow-shiro"
+        )}
+      >
         <div className={cxm("h-8 w-8 rounded-full bg-slate-500")}></div>
         <UnstyledLink
           className="mr-2.5 inline-flex h-7 w-7 items-center justify-center"

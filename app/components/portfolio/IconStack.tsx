@@ -19,6 +19,7 @@ import {
   SiBulma,
   SiBootstrap,
   SiVuedotjs,
+  SiLaravel,
 } from "react-icons/si";
 
 export type IconStackProps = {
@@ -57,6 +58,9 @@ export const IconStack: React.FunctionComponent<IconStackProps> = ({ type, class
     case "sass":
     case "scss":
       return <SiSass className={cxm("0 text-pink-500", className)} />;
+
+    case "laravel":
+      return <SiLaravel className={cxm("0 text-rose-500", className)} />;
 
     case "css":
     case "CSS":

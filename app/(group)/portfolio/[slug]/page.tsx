@@ -90,7 +90,7 @@ const DetailPortfolio: FC<DetailPortfolioProps> = ({ params }: any) => {
   const props = getDetailPortfolio(params);
 
   return (
-    <Main className={cxm()}>
+    <Main className={cxm()} useFooter={false}>
       <section className={cxm("prose", "dark:prose-invert", "md:prose-lg")}>
         <HeadingPortfolio
           title={props.fontMatter.title}

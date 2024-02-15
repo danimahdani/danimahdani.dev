@@ -17,7 +17,7 @@ const Footer: FC<FooterProps> = () => {
   return (
     <footer
       className={cxm(
-        "mx-auto mt-5 max-w-2xl border-t-2 border-shiro text-shiro lg:max-w-3xl",
+        " mt-5 max-w-2xl border-t-2 border-shiro text-shiro md:mx-auto lg:max-w-3xl",
         "flex justify-between pt-2",
         "mb-12 lg:md:pb-7"
       )}
