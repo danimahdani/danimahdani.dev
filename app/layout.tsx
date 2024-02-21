@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: ChildrenProps) {
   return (
     <html lang="en" className={cxm(poppins.variable)} suppressHydrationWarning>
-      <link rel="icon" type="image/x-icon" href="./dan.svg"></link>
+      <link rel="icon" type="image/x-icon" href="/dan.svg"></link>
       <body className="bg-stellar">
         <NextTopLoader color="#F4C2AB" showSpinner={false} />
         <div className={cxm("md:min-h-[90vh]", " text-shiro")}>

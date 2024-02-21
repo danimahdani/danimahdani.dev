@@ -41,7 +41,13 @@ export const HeadingPortfolio: React.FunctionComponent<HeadingPortfolioProps> = 
         )}
       </div>
 
-      <hr className={cxm("border-theme-300 dark:border-theme-700 mt-8")} />
+      <hr
+        className={cxm("border-theme-300 dark:border-theme-700 my-0")}
+        style={{
+          marginTop: "2rem",
+          marginBottom: "0",
+        }}
+      />
     </section>
   );
 };

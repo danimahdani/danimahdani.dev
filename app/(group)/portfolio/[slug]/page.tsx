@@ -2,19 +2,12 @@ import { Portfolio } from "danimahdani";
 import { cxm } from "libs/helpers";
 import { FC } from "react";
 import Main from "~ui/common/Main";
-import { serialize } from "next-mdx-remote/serialize";
-import type { ParsedUrlQuery } from "querystring";
-import rehypeSlug from "rehype-slug";
-import { MDXComponents } from "~ui/typography/mdx";
 import { IconStack } from "components/portfolio";
 import { HiOutlineCalendar } from "react-icons/hi";
 import { dateFormat, dateStringToISO } from "libs/intl";
 import { WrappedImage } from "~ui/images";
-import MdxResource from "~ui/typography/MdxResource";
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
-import { getContents, getContentBySlug } from "libs/content";
 import { HeadingPortfolio } from "../../../components/portfolio/HeadingPortfolio";
-import Footer from "~ui/common/Footer";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
@@ -34,35 +27,6 @@ interface PortfolioDetail {
     mdxSource: MDXRemoteSerializeResult<Record<string, unknown>, Record<string, unknown>>;
   };
 }
-
-// as fallback nextjs app route
-// export const dynamicParams = false;
-
-// export const generateStaticParams = async (): Promise<DetailPortfolioProps[]> => {
-//   const portfolio = await getContents<Portfolio>("/portfolio");
-
-//   const paths = portfolio.map((p) => ({ params: { slug: p.header.slug } }));
-
-//   return paths;
-// };
-
-// const getDetailPortfolio = async (context: DetailPortfolioProps): Promise<PortfolioDetail> => {
-//   const mdxPrism = await require("mdx-prism");
-//   const { slug } = context.params as ParsedUrlQuery & { slug: string };
-
-//   const res = await getContentBySlug<Portfolio>("/portfolio", slug);
-
-//   const mdxSource = await serialize(res.content, {
-//     mdxOptions: { rehypePlugins: [mdxPrism, rehypeSlug] },
-//   });
-
-//   return {
-//     props: {
-//       header: res.header,
-//       mdxSource,
-//     },
-//   };
-// };
 
 export async function generateStaticParams() {
   const files = fs.readdirSync(path.join("portfolio"));
@@ -86,11 +50,11 @@ function getDetailPortfolio({ slug }: { slug: string }) {
   };
 }
 
-const DetailPortfolio: FC<DetailPortfolioProps> = ({ params }: any) => {
+const DetailPortfolio: FC<DetailPortfolioProps> = ({ params }) => {
   const props = getDetailPortfolio(params);
 
   return (
-    <Main className={cxm()} useFooter={false}>
+    <Main className={cxm()} useFooter={true}>
       <section className={cxm("prose", "dark:prose-invert", "md:prose-lg")}>
         <HeadingPortfolio
           title={props.fontMatter.title}
@@ -136,10 +100,7 @@ const DetailPortfolio: FC<DetailPortfolioProps> = ({ params }: any) => {
           fill
         />
 
-        {/* <MdxResource mdxSource={mdxSource} mdxComponents={MDXComponents} /> */}
         <MDXRemote source={props.content}></MDXRemote>
-
-        <Footer />
       </section>
     </Main>
   );
