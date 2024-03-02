@@ -7,7 +7,7 @@ import NextTopLoader from "nextjs-toploader";
 import Navbar from "~ui/common/Navigation/Navbar";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://danimahdani.dev"),
+  metadataBase: new URL("https://danimahdani.vercel.app"),
   title: "Muhammad Mahdani Rahmatullah",
   description: "Welcome to my portfolio",
   icons: {
@@ -16,11 +16,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Muhammad Mahdani Rahmatullah",
     description: "Welcome to my portfolio",
-    url: "https://danimahdani.dev",
+    url: "https://danimahdani.vercel.app",
     siteName: "Muhammad Mahdani",
     images: [
       {
-        url: "https://danimahdani.dev/dan.png",
+        url: "https://danimahdani.vercel.app/dan.png",
         width: 1920,
         height: 1080,
       },
