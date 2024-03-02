@@ -7,8 +7,27 @@ import NextTopLoader from "nextjs-toploader";
 import Navbar from "~ui/common/Navigation/Navbar";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://danimahdani.dev"),
   title: "Muhammad Mahdani Rahmatullah",
   description: "Welcome to my portfolio",
+  icons: {
+    icon: "/dan.svg",
+  },
+  openGraph: {
+    title: "Muhammad Mahdani Rahmatullah",
+    description: "Welcome to my portfolio",
+    url: "https://danimahdani.dev",
+    siteName: "Muhammad Mahdani",
+    images: [
+      {
+        url: "https://danimahdani.dev/dan.png",
+        width: 1920,
+        height: 1080,
+      },
+    ],
+    locale: "en-US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }: ChildrenProps) {
