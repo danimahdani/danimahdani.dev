@@ -16,6 +16,7 @@ export const WrappedImage: FC<WrappedImageProps> = ({ parentStyle, ...props }) =
     <figure className={cxm("relative", parentStyle)}>
       <NextImage
         {...props}
+        loading="lazy"
         placeholder="blur"
         blurDataURL="/blur.svg"
         sizes="(max-width: 768px) 100%"

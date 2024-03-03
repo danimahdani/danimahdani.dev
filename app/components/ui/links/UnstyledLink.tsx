@@ -2,12 +2,12 @@ import NextLink from "next/link";
 import type { LinkProps } from "next/link";
 import { createElement, forwardRef } from "react";
 
-export type UnstyledLinkProps = {
+export interface UnstyledLinkProps extends LinkProps {
   href: string;
   title?: string;
   className?: string;
   children?: React.ReactNode;
-} & LinkProps;
+}
 
 export const UnstyledLink = forwardRef<HTMLAnchorElement, UnstyledLinkProps>(
   ({ href, ...props }, ref) => {
