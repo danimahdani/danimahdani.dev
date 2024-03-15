@@ -15,9 +15,10 @@ const Page: FC<PageProps> = ({}) => {
           Portfolio
         </Heading>
         <p className="mb-10">
-          I&apos;ve put together a portfolio of my personal work . You&apos;re welcome to take a
-          look and explore. Some of the portfolios even have website demos that you can try out if
-          you&apos;d like.{" "}
+          On the main page you can see some of my previous work and here there are also most of my
+          portfolios are in my previous work which I can&apos;t share here, here are just some of
+          the personal portfolios I&apos;ve created. You&apos;re welcome to take a look and explore.
+          Some of the portfolios even have website demos that you can try out if you&apos;d like.{" "}
         </p>
       </React.Fragment>
       {portfolios.map((portfolio, idx) => (
