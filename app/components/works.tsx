@@ -26,7 +26,7 @@ export const SinergiMitraGroserindo = () => {
           Horizon Fast Ferry
         </UnstyledLink>{" "}
         , I also contributed to making their projects such as{" "}
-        <UnstyledLink className="underline-offset-4" href="https://batam-ferry.com/">
+        <UnstyledLink className="underline-offset-4" href="https://batamferry.com/">
           Batam Ferry
         </UnstyledLink>{" "}
         , and I also handled several more projects.
